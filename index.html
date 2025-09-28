@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>البورتفوليو الشخصي</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                box-sizing: border-box;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(
+                    135deg,
+                    #4c4c5a 0%,
+                    #1d212c 50%,
+                    #1e2022 100%
+                );
+            }
+
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .text-gradient {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .skill-bar {
+                height: 8px;
+                background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                border-radius: 4px;
+                transition: width 2s ease-in-out;
+            }
+
+            .nav-link {
+                position: relative;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            .floating {
+                animation: floating 3s ease-in-out infinite;
+            }
+
+            @keyframes floating {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gray-900 text-white font-sans">
+        <!-- Navigation -->
+        <nav
+            class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800"
+        >
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold text-gradient">
+                        Safia Analyst
+                    </div>
+                    <div class="hidden md:flex space-x-8 space-x-reverse">
+                        <a href="#home" class="nav-link hover:text-purple-400"
+                            >الرئيسية</a
+                        >
+                        <a href="#about" class="nav-link hover:text-purple-400"
+                            >نبذة عني</a
+                        >
+                        <a href="#skills" class="nav-link hover:text-purple-400"
+                            >المهارات</a
+                        >
+                        <a
+                            href="#projects"
+                            class="nav-link hover:text-purple-400"
+                            >المشاريع</a
+                        >
+                        <a
+                            href="#contact"
+                            class="nav-link hover:text-purple-400"
+                            >التواصل</a
+                        >
+                    </div>
+                    <button id="menuBtn" class="md:hidden text-white">
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div
+            id="mobileMenu"
+            class="fixed inset-0 bg-gray-900/95 backdrop-blur-sm z-40 hidden"
+        >
+            <div
+                class="flex flex-col items-center justify-center h-full space-y-8"
+            >
+                <a
+                    href="#home"
+                    class="text-2xl hover:text-purple-400 mobile-link"
+                    >الرئيسية</a
+                >
+                <a
+                    href="#about"
+                    class="text-2xl hover:text-purple-400 mobile-link"
+                    >نبذة عني</a
+                >
+                <a
+                    href="#skills"
+                    class="text-2xl hover:text-purple-400 mobile-link"
+                    >المهارات</a
+                >
+                <a
+                    href="#projects"
+                    class="text-2xl hover:text-purple-400 mobile-link"
+                    >المشاريع</a
+                >
+                <a
+                    href="#contact"
+                    class="text-2xl hover:text-purple-400 mobile-link"
+                    >التواصل</a
+                >
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section
+            id="home"
+            class="gradient-bg min-h-screen flex items-center justify-center pt-20"
+        >
+            <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="floating mb-8">
+    <div
+        class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 
+        flex items-center justify-center overflow-hidden"
+    >
+        <img src="images/logo.png" alt="Logo" class="w-full h-full object-cover">
+    </div>
+</div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    مرحباً، أنا <span class="text-gradient">صفيه فارس</span>
+                </h1>
+                <p
+                    class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+                >
+                    محللة بيانات & أعمال
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                    >
+                        عرض أعمالي
+                    </button>
+                    <button
+                        class="border-2 border-purple-500 hover:bg-purple-500 px-8 py-3 rounded-full font-semibold transition-all duration-300"
+                    >
+                        تحميل السيرة الذاتية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gradient">
+                    نبذة عني
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-purple-400">
+                            قصتي المهنية
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-justify">
+                            محللة بيانات مبتدئة شغوفة بتحويل البيانات إلى رؤى
+                            قابلة للتنفيذ. أمتلك مهارات في SQL وPython وPower
+                            BI، قمت بتطوير مشاريع تعليمية ذاتية توضح قدرتي على
+                            تنظيف البيانات وتحليلها وتصميم لوحات معلومات
+                            تفاعلية. هدفي هو تقديم رؤى تدعم النمو واتخاذ قرارات
+                            أكثر ذكاءً.
+                        </p>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-justify">
+                            أؤمن بأن كل رقم في البيانات يحمل قصة تنتظر من
+                            يفهمها. شغفي هو اكتشاف هذه القصص، وفهم ما وراء
+                            الأرقام، لتحويلها إلى رؤى تُحدث فرقًا وتلهم من حولي.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="bg-purple-600/20 text-purple-300 px-4 py-2 rounded-full text-sm"
+                                >SQL</span
+                            >
+                            <span
+                                class="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm"
+                                >Python</span
+                            >
+                            <span
+                                class="bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm"
+                                >Excel</span
+                            >
+                            <span
+                                class="bg-yellow-600/20 text-yellow-300 px-4 py-2 rounded-full text-sm"
+                                >Power BI</span
+                            >
+                        </div>
+                    </div>
+                    <div class="bg-gray-700/50 p-8 rounded-2xl">
+                        <h4 class="text-xl font-bold mb-6 text-purple-400">
+                            الإحصائيات
+                        </h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>المشاريع المكتملة</span>
+                                    <span class="font-bold text-purple-400"
+                                        >+</span
+                                    >
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>العملاء السعداء</span>
+                                    <span class="font-bold text-purple-400"
+                                        >+</span
+                                    >
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>سنوات الخبرة</span>
+                                    <span class="font-bold text-purple-400"
+                                        >+</span
+                                    >
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>التقنيات المتقنة</span>
+                                    <span class="font-bold text-purple-400"
+                                        >+</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gradient">
+
+                    المهارات التقنية
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800/50 p-6 rounded-2xl card-hover">
+                        <h3 class="text-xl font-bold mb-4 text-purple-400 text-center">
+                            أدوات إعداد البيانات
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>My SQL</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Excel</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[95%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 p-6 rounded-2xl card-hover">
+                        <h3 class="text-xl font-bold mb-4 text-purple-400 text-center">
+                            أدوات البرمجة والتحليلات 💻                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Python</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>R</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[80%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Html</span>
+                                    <span>82%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[82%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 p-6 rounded-2xl card-hover">
+                        <h3 class="text-xl font-bold mb-4 text-purple-400 text-center">
+                            أدوات عرض البيانات
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Power BI</span>
+                                    <span>87%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[87%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Tableau</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[75%]"></div>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gradient">
+                    المشاريع
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div
+    class="bg-gray-700/50 rounded-2xl overflow-hidden card-hover"
+>
+    <!-- صورة المشروع -->
+    <div class="h-48 flex items-center justify-center overflow-hidden">
+        <img src="images/project1.png" alt="Project 1" class="w-full h-full object-cover">
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-3 text-purple-400 ">
+            لوحة تحكم تسريحات العمالة العالمية
+        </h3>
+        <p class="text-gray-300 mb-4 text-justify">
+            قمت بتطوير لوحة معلومات تفاعلية باستخدام بيانات من 1,995 شركة وأكثر من 383,000 موظف تم تسريحهم، 
+            حيث توفر اللوحة رؤية واضحة لتأثير التسريحات على مستوى الصناعات، والتوزيع الجغرافي، 
+            والاتجاهات عبر الزمن، مع إمكانية استكشاف البيانات بشكل ديناميكي
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">Power Qwery</span>
+            <span class="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-xs">SQL</span>
+            <span class="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-xs">Excel</span>
+        </div>
+
+        <!-- زر مع رابط -->
+        <a href="https://github.com/safia-analyst/portfolio-site" target="_blank" 
+        class="block text-center w-full bg-gradient-to-r from-purple-600 to-blue-600 
+        hover:from-purple-700 hover:to-blue-700 py-2 rounded-lg transition-all duration-300">
+            عرض المشروع
+        </a>
+    </div>
+</div>
+
+
+                    <div
+                        class="bg-gray-700/50 rounded-2xl overflow-hidden card-hover"
+                    >
+    <!-- صورة المشروع -->
+    <div class="h-48 flex items-center justify-center overflow-hidden">
+        <img src="images/project2.png" alt="Project 2" class="w-full h-full object-cover">
+    </div>
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-green-400">
+                            لوحة تحكم أداء المبيعات                                 </h3>
+                            <p class="text-gray-300 mb-4 text-justify">
+                            قمتُ بتصميم وتطوير لوحة معلومات تفاعلية باستخدام اكسيل لتحليل بيانات مبيعات تجاوزت 2.2 مليون دولار عبر المدن والولايات والفئات وشرائح العملاء. توفر لوحة التحكم رؤى تفصيلية حول أفضل المناطق أداءً، واتجاهات الفئات، ومعدلات النمو السنوي، كما تتضمن خرائط جغرافية تفاعلية، وتحليلًا للاتجاهات عبر الزمن، بالإضافة إلى تتبع مؤشرات الأداء   الرئيسية مثل إجمالي المبيعات، المرتجعات، صافي المبيعات، وعدد العملاء         
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-xs"
+                                    >Excel</span
+                                >
+                                <span
+                                    class="bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full text-xs"
+                                    >Power BI</span
+                                >
+                                <span
+                                    class="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-xs"
+                                    >Python</span
+                                >
+                            </div>
+                                    <!-- زر مع رابط -->
+        <a href="https://github.com/safia-analyst" target="_blank" 
+        class="block text-center w-full bg-gradient-to-r from-purple-600 to-blue-600 
+        hover:from-purple-700 hover:to-blue-700 py-2 rounded-lg transition-all duration-300">
+            عرض المشروع
+        </a>
+    </div>
+</div>
+
+
+
+<!-- الكارد: لوحة تحكم مبيعات تسلا -->
+<div class="bg-gray-700/50 rounded-2xl overflow-hidden card-hover">
+    <!-- صورة المشروع -->
+    <div class="h-48 flex items-center justify-center overflow-hidden">
+        <img src="images/project3.png" alt="Project 3" class="w-full h-full object-cover">
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-3 text-orange-400">
+            لوحة تحكم مبيعات تسلا سايبرتراك
+        </h3>
+        <p class="text-gray-300 mb-4 text-justify">
+            قمتُ بتطوير لوحة معلومات تفاعلية لتحليل بيانات إعادة بيع سيارات فى مختلف الولايات الأمريكية.
+            تُبرز اللوحة مؤشرات رئيسية مثل متوسط الأسعار، وعدد الأميال المقطوعة، والأقساط الشهرية وسجل الحوادث،
+            مع توفير مقارنات بصرية لاتجاهات الأسعار وعدد الأميال حسب الولايات. كما تعرض اللوحة تقسيمًا لمتوسط الأسعار
+            وفق أنظمة المساعدة على القيادة، مما يوفّر رؤى واضحة حول أنماط الاستخدام وقيمة السوق.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Power BI</span>
+            <span class="bg-red-600/20 text-red-300 px-3 py-1 rounded-full text-xs">Power Query</span>
+            <span class="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">DAX</span>
+        </div>
+        <!-- زر مع رابط -->
+        <a href="https://drive.google.com/file/d/12GVTAi0VYZpsVUVSaBFr90ATEZs3b_wN/view" target="_blank"
+        class="block text-center w-full bg-gradient-to-r from-purple-600 to-blue-600 
+        hover:from-purple-700 hover:to-blue-700 py-2 rounded-lg transition-all duration-300">
+            عرض المشروع
+        </a>
+    </div>
+</div>
+
+<!-- الكارد: Logistics Data Scraper -->
+<div class="bg-gray-700/50 rounded-2xl overflow-hidden card-hover">
+    <!-- صورة المشروع -->
+    <div class="h-48 flex items-center justify-center overflow-hidden">
+        <img src="images/project4.png" alt="Project 4" class="w-full h-full object-cover">
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-3 text-orange-400">
+            Logistics Data Scraper
+        </h3>
+        <p class="text-gray-300 mb-4 text-justify">
+قمتُ بتطوير سكريبت بلغة Python يقوم بعملية ويب سكرابينج لاستخراج بيانات شركات الخدمات اللوجستية في مصر. يعتمد السكريبت على تصفح المواقع المتاحة وجمع معلومات أساسية مثل أسماء الشركات، مواقعها الجغرافية، وروابط مواقعها الإلكترونية، ثم يقوم بحفظها بشكل منظم داخل ملف CSV ليسهّل تحليلها أو استخدامها لاحقًا في التطبيقات المختلفة.        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Python</span>
+            <span class="bg-red-600/20 text-red-300 px-3 py-1 rounded-full text-xs">Excel</span>
+        </div>
+        <!-- زر مع رابط -->
+        <a href="https://github.com/safia-analyst/LogisticsScraper/blob/main/scrape_logistics.py" target="_blank"
+        class="block text-center w-full bg-gradient-to-r from-purple-600 to-blue-600 
+        hover:from-purple-700 hover:to-blue-700 py-2 rounded-lg transition-all duration-300">
+            عرض المشروع
+        </a>
+    </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-16 text-gradient">
+      تواصل معي
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- عمود بيانات التواصل -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">
+          لنبدأ مشروعاً جديداً معاً
+        </h3>
+        <p class="text-gray-300 mb-8 leading-relaxed text-justify">
+          هل تبحث عن رؤى أعمق؟ أم تحتاج إلى قرارات مبنية على حقائق؟ 
+          أنا هنا لأحوّل البيانات إلى قصص واضحة وأفكار عملية تساعدك 
+          على رؤية الصورة كاملة واتخاذ خطوات واثقة نحو النجاح.
+        </p>
+
+        <div class="space-y-4">
+          <!-- البريد الإلكتروني -->
+          <div class="flex items-center space-x-4 space-x-reverse">
+            <div class="bg-purple-600/20 p-3 rounded-full">
+              <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">البريد الإلكتروني</p>
+              <p class="text-gray-400">safiafars16@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- الهاتف -->
+          <div class="flex items-center space-x-4 space-x-reverse">
+            <div class="bg-purple-600/20 p-3 rounded-full">
+              <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">الهاتف</p>
+              <p class="text-gray-400">
+                <a href="tel:+201288722441" class="hover:underline">+20 1288 722 441</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- واتساب -->
+          <div class="flex items-center space-x-4 space-x-reverse">
+            <div class="bg-purple-600/20 p-3 rounded-full">
+              <svg class="w-6 h-6 text-purple-400" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 2.9c-7.3 0-13.1 5.9-13.1 13.1 0 2.3.6 4.5 1.7 6.5L2 30l7.7-2.5c1.9 1 4.1 1.5 6.3 1.5 7.3 0 13.1-5.9 13.1-13.1S23.3 2.9 16 2.9zm0 23.9c-2 0-4-.5-5.7-1.5l-.4-.2-4.5 1.5 1.5-4.4-.3-.5c-1-1.7-1.6-3.7-1.6-5.8 0-6.1 5-11.1 11.1-11.1s11.1 5 11.1 11.1-5 11.1-11.2 11.1zm6-8.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.5c-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.8-1-2.5c-.3-.7-.5-.6-.7-.6h-.6c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 2 3.2 4.9 4.5.7.3 1.2.6 1.6.7.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3s.3-1.1.2-1.3c-.1-.2-.3-.3-.6-.5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">واتساب</p>
+              <p class="text-gray-400">
+                <a href="https://wa.me/201288722441" target="_blank" class="hover:underline">
+                  تواصل عبر واتساب
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- الموقع -->
+          <div class="flex items-center space-x-4 space-x-reverse">
+            <div class="bg-purple-600/20 p-3 rounded-full">
+              <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">الموقع</p>
+              <p class="text-gray-400">المنوفيه، مصر</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- عمود الفورم -->
+      <div class="bg-gray-800/50 p-8 rounded-2xl">
+        <form id="contactForm" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">الاسم</label>
+            <input type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors" placeholder="اسمك الكامل" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">البريد الإلكتروني</label>
+            <input type="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors" placeholder="email@example.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">الموضوع</label>
+            <input type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors" placeholder="موضوع الرسالة" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">الرسالة</label>
+            <textarea rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors resize-none" placeholder="اكتب رسالتك هنا..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            إرسال الرسالة
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 border-t border-gray-700 py-8">
+            <div class="max-w-7xl mx-auto px-6">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="text-center md:text-right mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            safia-Analyst @2025
+                        </p>
+                    </div>
+                    <div class="flex space-x-6 space-x-reverse">
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-purple-400 transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                                />
+                            </svg>
+                        </a>
+<div class="flex space-x-6 space-x-reverse">
+    <a
+        href="https://www.linkedin.com/in/safia-fars-5b9438382/recent-activity/all/?trk=public_profile-settings_see-all-posts"
+        target="_blank"
+        class="text-gray-400 hover:text-purple-400 transition-colors"
+    >
+        <!-- أيقونة لينكدإن -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 
+            5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 
+            19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76 
+            0-.97.78-1.75 1.75-1.75s1.75.78 
+            1.75 1.75c0 .97-.78 1.76-1.75 1.76zm13.5 
+            11.27h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 
+            0-2.16 1.46-2.16 2.96v5.7h-3v-10h2.88v1.37h.04c.4-.76 
+            1.38-1.55 2.84-1.55 3.04 0 3.6 2 
+            3.6 4.59v5.59z"/>
+        </svg>
+    </a>
+</div>
+
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-purple-400 transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-12.013C24.007 5.367 18.641.001.017.001z"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile menu toggle
+            const menuBtn = document.getElementById("menuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const mobileLinks = document.querySelectorAll(".mobile-link");
+
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href")
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+
+            // Contact form submission
+            document
+                .getElementById("contactForm")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(this);
+                    const name = this.querySelector('input[type="text"]').value;
+                    const email = this.querySelector(
+                        'input[type="email"]'
+                    ).value;
+                    const subject =
+                        this.querySelectorAll('input[type="text"]')[1].value;
+                    const message = this.querySelector("textarea").value;
+
+                    // Simple validation
+                    if (!name || !email || !subject || !message) {
+                        alert("يرجى ملء جميع الحقول المطلوبة");
+                        return;
+                    }
+
+                    // Simulate form submission
+                    const submitBtn = this.querySelector(
+                        'button[type="submit"]'
+                    );
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = "جاري الإرسال...";
+                    submitBtn.disabled = true;
+
+                    setTimeout(() => {
+                        alert("تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.");
+                        this.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                });
+
+            // Animate skill bars on scroll
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: "0px 0px -100px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const skillBars =
+                            entry.target.querySelectorAll(".skill-bar");
+                        skillBars.forEach((bar) => {
+                            bar.style.width = bar.classList.contains("w-[90%]")
+                                ? "90%"
+                                : bar.classList.contains("w-[95%]")
+                                ? "95%"
+                                : bar.classList.contains("w-[88%]")
+                                ? "88%"
+                                : bar.classList.contains("w-[85%]")
+                                ? "85%"
+                                : bar.classList.contains("w-[80%]")
+                                ? "80%"
+                                : bar.classList.contains("w-[82%]")
+                                ? "82%"
+                                : bar.classList.contains("w-[87%]")
+                                ? "87%"
+                                : bar.classList.contains("w-[75%]")
+                                ? "75%"
+                                : bar.classList.contains("w-[70%]")
+                                ? "70%"
+                                : "0%";
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe skills section
+            const skillsSection = document.getElementById("skills");
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+
+            // Add scroll effect to navigation
+            window.addEventListener("scroll", () => {
+                const nav = document.querySelector("nav");
+                if (window.scrollY > 100) {
+                    nav.classList.add("bg-gray-900");
+                    nav.classList.remove("bg-gray-900/95");
+                } else {
+                    nav.classList.remove("bg-gray-900");
+                    nav.classList.add("bg-gray-900/95");
+                }
+            });
+        </script>
+        <script>
+            (function () {
+                function c() {
+                    var b = a.contentDocument || a.contentWindow.document;
+                    if (b) {
+                        var d = b.createElement("script");
+                        d.innerHTML =
+                            "window.__CF$cv$params={r:'985e0abc4551d82a',t:'MTc1OTAwNzk5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                        b.getElementsByTagName("head")[0].appendChild(d);
+                    }
+                }
+                if (document.body) {
+                    var a = document.createElement("iframe");
+                    a.height = 1;
+                    a.width = 1;
+                    a.style.position = "absolute";
+                    a.style.top = 0;
+                    a.style.left = 0;
+                    a.style.border = "none";
+                    a.style.visibility = "hidden";
+                    document.body.appendChild(a);
+                    if ("loading" !== document.readyState) c();
+                    else if (window.addEventListener)
+                        document.addEventListener("DOMContentLoaded", c);
+                    else {
+                        var e = document.onreadystatechange || function () {};
+                        document.onreadystatechange = function (b) {
+                            e(b);
+                            "loading" !== document.readyState &&
+                                ((document.onreadystatechange = e), c());
+                        };
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>
